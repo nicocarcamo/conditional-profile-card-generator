@@ -28,22 +28,55 @@ function render(variables = {}) {
   // if includeCover==false then we reset the cover code without the <img> tag to make the cover transparent.
   let cover = `<div class="cover"><img src="${variables.background}" /></div>`;
   if (variables.includeCover == false) cover = "<div class='cover'></div>";
+  if (variables.name == null) {
+    variables.name = "lucy";
+  }
+  if (variables.lastname == null) {
+    variables.lastname = "Boilett";
+  }
+  if (variables.role == null) {
+    variables.role = "Web developer";
+  }
+  if (variables.city == null) {
+    variables.city = "Miami";
+  }
+  if (variables.country == null) {
+    variables.country = "USA";
+  }
+  if (variables.socialMediaPosition == null) {
+    variables.socialMediaPosition = "position-left";
+  }
+  if (variables.socialMediaPosition == true) {
+    variables.socialMediaPosition = "position-right";
+  }
+  if (variables.github == null) {
+    variables.github = "<p>alesanchezr</p>";
+  }
+  if (variables.twitter == null) {
+    variables.twitter = "<h3>Twitter</h3>";
+  }
+  if (variables.linkedin == null) {
+    variables.linkedin = "<h3>LinkedIn</h3>";
+  }
+  if (variables.instagram == null) {
+    variables.instagram = "<h3>Instagram</h3>";
+  }
 
   // reset the website body with the new html output
   document.querySelector("#widget_content").innerHTML = `<div class="widget">
-            ${cover}
-          <img src="${variables.avatarURL}" class="photo" />
-          <h1>Lucy Boilett</h1>
-          <h2>Web Developer</h2>
-          <h3>Miami, USA</h3>
-          <ul class="position-right">
-            <li><a href="https://twitter.com/4geeksacademy"><i class="fab fa-twitter"></i></a></li>
-            <li><a href="https://github.com/4geeksacademy"><i class="fab fa-github"></i></a></li>
-            <li><a href="https://linkedin.com/4geeksacademy"><i class="fab fa-linkedin"></i></a></li>
-            <li><a href="https://instagram.com/4geeksacademy"><i class="fab fa-instagram"></i></a></li>
-          </ul>
-        </div>
-    `;
+                ${cover}
+              <img src="${variables.avatarURL}" class="photo" />
+              <h1>${variables.name} ${variables.lastname}</h1>
+              <h2>${variables.role}</h2>
+              <h3>${variables.city}, ${variables.country}</h3>
+              <ul class="${variables.socialMediaPosition}">
+                <li><a href="https://twitter.com/${variables.twitter}"><i class="fa-brands fa-twitter"></i></a></li>
+                <li><a href="https://github.com/${variables.github}"><i class="fa-brands fa-github"></i></a></li>
+                <li><a href="https://linkedin.com/${variables.linkedin}"><i class="fa-brands fa-linkedin"></i></a></li>
+                <li><a href="https://instagram.com/${variables.instagram}"><i class="fa-brands fa-instagram"></i></a></li>
+              </ul>
+              </div>
+        `;
 }
 
 /**
@@ -54,9 +87,9 @@ window.onload = function() {
     // if includeCover is true the algorithm should
     includeCover: true,
     // this is the url of the image that will used as background for the profile cover
-    background: "https://images.unsplash.com/photo-1511974035430-5de47d3b95da",
+    background: "https://picsum.photos/id/8/5000/3333",
     // this is the url for the profile avatar
-    avatarURL: "https://randomuser.me/api/portraits/women/42.jpg",
+    avatarURL: "https://avatars.githubusercontent.com/u/26225024?v=4",
     // social media bar position (left or right)
     socialMediaPosition: "position-left",
     // social media usernames
