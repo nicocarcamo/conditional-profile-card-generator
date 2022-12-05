@@ -29,13 +29,13 @@ function render(variables = {}) {
   let cover = `<div class="cover"><img src="${variables.background}" /></div>`;
   if (variables.includeCover == false) cover = "<div class='cover'></div>";
   if (variables.name == null) {
-    variables.name = "lucy";
+    variables.name = "Lucy";
   }
   if (variables.lastname == null) {
     variables.lastname = "Boilett";
   }
   if (variables.role == null) {
-    variables.role = "Web developer";
+    variables.role = "Web Developer";
   }
   if (variables.city == null) {
     variables.city = "Miami";
@@ -49,17 +49,14 @@ function render(variables = {}) {
   if (variables.socialMediaPosition == true) {
     variables.socialMediaPosition = "position-right";
   }
-  if (variables.github == null) {
-    variables.github = "<p>alesanchezr</p>";
-  }
   if (variables.twitter == null) {
-    variables.twitter = "<h3>Twitter</h3>";
+    variables.twitter = "twitter";
   }
   if (variables.linkedin == null) {
-    variables.linkedin = "<h3>LinkedIn</h3>";
+    variables.linkedin = "linkedIn";
   }
   if (variables.instagram == null) {
-    variables.instagram = "<h3>Instagram</h3>";
+    variables.instagram = "instagram";
   }
 
   // reset the website body with the new html output
